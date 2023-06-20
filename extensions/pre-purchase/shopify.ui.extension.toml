@@ -1,0 +1,13 @@
+type = "checkout_ui_extension"
+name = "example-checkout--product-offer-pre-purchase--react"
+
+# [START pre-purchase.ext-config]
+extension_points = [
+  'Checkout::Dynamic::Render'
+]
+# [END pre-purchase.ext-config]
+
+# [START pre-purchase.api-access]
+[capabilities]
+api_access = true
+# [END pre-purchase.api-access]
