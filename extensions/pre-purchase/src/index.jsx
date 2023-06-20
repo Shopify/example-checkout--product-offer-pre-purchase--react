@@ -16,9 +16,9 @@ import {
   useApplyCartLinesChange,
 } from '@shopify/checkout-ui-extensions-react';
 
-// [START pre-purchase.ext-index]
+// [START product-offer-pre-purchase.ext-index]
 render('Checkout::Dynamic::Render', () => <App />);
-// [END pre-purchase.ext-index]
+// [END product-offer-pre-purchase.ext-index]
 
 function App() {
   const { query, i18n } = useExtensionApi();
@@ -27,9 +27,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [adding, setAdding] = useState(false);
   const [showError, setShowError] = useState(false);
-  // [START pre-purchase.retrieve-cart-data]
+  // [START product-offer-pre-purchase.retrieve-cart-data]
   const lines = useCartLines();
-  // [END pre-purchase.retrieve-cart-data]
+  // [END product-offer-pre-purchase.retrieve-cart-data]
 
   useEffect(() => {
     fetchProducts();
@@ -42,7 +42,7 @@ function App() {
     }
   }, [showError]);
 
-  // [START pre-purchase.retrieve-products]
+  // [START product-offer-pre-purchase.retrieve-products]
   async function fetchProducts() {
     setLoading(true);
     try {
@@ -79,9 +79,9 @@ function App() {
       setLoading(false);
     }
   }
-  // [END pre-purchase.retrieve-products]
+  // [END product-offer-pre-purchase.retrieve-products]
 
-  /* [START pre-purchase.add-to-cart] */
+  /* [START product-offer-pre-purchase.add-to-cart] */
   async function handleAddToCart(variantId) {
     setAdding(true);
     const result = await applyCartLinesChange({
@@ -95,7 +95,7 @@ function App() {
       console.error(result.message);
     }
   }
-  /* [END pre-purchase.add-to-cart] */
+  /* [END product-offer-pre-purchase.add-to-cart] */
 
   if (loading) {
     return <LoadingSkeleton />;
@@ -122,7 +122,7 @@ function App() {
   );
 }
 
-// [START pre-purchase.loading-state]
+// [START product-offer-pre-purchase.loading-state]
 function LoadingSkeleton() {
   return (
     <BlockStack spacing='loose'>
@@ -147,7 +147,7 @@ function LoadingSkeleton() {
     </BlockStack>
   );
 }
-// [END pre-purchase.loading-state]
+// [END product-offer-pre-purchase.loading-state]
 
 function getProductsOnOffer(lines, products) {
   const cartLineProductVariantIds = lines.map((item) => item.merchandise.id);
@@ -159,7 +159,7 @@ function getProductsOnOffer(lines, products) {
   });
 }
 
-// [START pre-purchase.offer-ui]
+// [START product-offer-pre-purchase.offer-ui]
 function ProductOffer({ product, i18n, adding, handleAddToCart, showError }) {
   const { images, title, variants } = product;
   const renderPrice = i18n.formatCurrency(variants.nodes[0].price.amount);
@@ -205,9 +205,9 @@ function ProductOffer({ product, i18n, adding, handleAddToCart, showError }) {
     </BlockStack>
   );
 }
-// [END pre-purchase.offer-ui]
+// [END product-offer-pre-purchase.offer-ui]
 
-// [START pre-purchase.error-ui]
+// [START product-offer-pre-purchase.error-ui]
 function ErrorBanner() {
   return (
     <Banner status='critical'>
@@ -215,4 +215,4 @@ function ErrorBanner() {
     </Banner>
   );
 }
-// [END pre-purchase.error-ui]
+// [END product-offer-pre-purchase.error-ui]
