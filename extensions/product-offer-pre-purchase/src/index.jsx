@@ -149,6 +149,7 @@ function LoadingSkeleton() {
 }
 // [END product-offer-pre-purchase.loading-state]
 
+// [START product-offer-pre-purchase.filter-products]
 function getProductsOnOffer(lines, products) {
   const cartLineProductVariantIds = lines.map((item) => item.merchandise.id);
   return products.filter((product) => {
@@ -158,6 +159,7 @@ function getProductsOnOffer(lines, products) {
     return !isProductVariantInCart;
   });
 }
+// [END product-offer-pre-purchase.filter-products]
 
 // [START product-offer-pre-purchase.offer-ui]
 function ProductOffer({ product, i18n, adding, handleAddToCart, showError }) {
