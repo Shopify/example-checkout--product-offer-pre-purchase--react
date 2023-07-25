@@ -1,6 +1,6 @@
 # Shopify app example: pre-purchase product offer checkout extension
 
-This repo contains an example app that uses [checkout UI extensions](https://shopify.dev/docs/api/checkout-ui-extensions) to build a pre-purchase product offer experience using Node.js and React JavaScript.
+This repo contains an example app that uses [checkout UI extensions](https://shopify.dev/docs/api/checkout-ui-extensions) to build a pre-purchase product offer experience using Remix and React.
 
 For more information, and for a walkthrough of this code, review our tutorial: [Build a pre-purchase product offer checkout extension](https://shopify.dev/docs/apps/checkout/product-offers/pre-purchase/build)
 
