@@ -9,7 +9,7 @@ type = "ui_extension"
 handle = "product-offer"
 # [START product-offer-pre-purchase.ext-config]
 [[extensions.targeting]]
-module = "./src/index.jsx"
+module = "./src/Checkout.jsx"
 target = "purchase.checkout.block.render"
 # [END product-offer-pre-purchase.ext-config]
 
