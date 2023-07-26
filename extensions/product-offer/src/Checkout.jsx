@@ -13,7 +13,7 @@ import {
   SkeletonImage,
   useCartLines,
   useApplyCartLinesChange,
-  useExtensionApi,
+  useApi,
 } from "@shopify/ui-extensions-react/checkout";
 // [START product-offer-pre-purchase.ext-index]
 // Set up the entry point for the extension
@@ -21,7 +21,7 @@ export default reactExtension("purchase.checkout.block.render", () => <App />);
 // [END product-offer-pre-purchase.ext-index]
 
 function App() {
-  const { query, i18n } = useExtensionApi();
+  const { query, i18n } = useApi();
   // [START product-offer-pre-purchase.add-to-cart]
   const applyCartLinesChange = useApplyCartLinesChange();
   // [END product-offer-pre-purchase.add-to-cart]
