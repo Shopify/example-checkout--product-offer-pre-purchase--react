@@ -1,37 +1,24 @@
 # Learn more about configuring your checkout UI extension:
 # https://shopify.dev/api/checkout-extensions/checkout/configuration
 
-api_version = "2023-10"
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-04"
 
 [[extensions]]
 name = "product-offer"
 type = "ui_extension"
 handle = "product-offer"
 # [START product-offer-pre-purchase.ext-config]
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
 [[extensions.targeting]]
 module = "./src/Checkout.jsx"
 target = "purchase.checkout.block.render"
 # [END product-offer-pre-purchase.ext-config]
 
-# [[extensions.metafields]]
-# namespace = "my-namespace"
-# key = "my-key"
-# [[extensions.metafields]]
-# namespace = "my-namespace"
-# key = "my-other-key"
-# [START product-offer-pre-purchase.api-access]
 [extensions.capabilities]
 api_access = true
 # [END product-offer-pre-purchase.api-access]
-network_access = true
-block_progress = true
-
-# [extensions.settings]
-#   [[extensions.settings.fields]]
-#   key = "banner_title"
-#   type = "single_line_text_field"
-#   name = "Banner title"
-#   description = "Enter a title for the banner"
-
-
-
