@@ -186,11 +186,11 @@ function ProductOffer({ product, i18n, adding, handleAddToCart, showError }) {
             borderWidth='base'
             borderRadius='loose'
             source={imageUrl}
-            description={title}
+            accessibilityDescription={title}
             aspectRatio={1}
           />
           <BlockStack spacing='none'>
-            <Text size='medium' emphasis='strong'>
+            <Text size='medium' emphasis='bold'>
               {title}
             </Text>
             <Text appearance='subdued'>{renderPrice}</Text>
